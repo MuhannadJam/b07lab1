@@ -21,7 +21,7 @@ public class Driver {
 		
 		Polynomial p3 = p1.add(p2);
 
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < p3.coefficients.length; i++)
 		{
 			System.out.println(p3.coefficients[i] + " Power: " + p3.exponent[i]);
 		}
@@ -32,7 +32,7 @@ public class Driver {
 
 		Polynomial p4 = p1.multiply(p2);
 
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < p4.coefficients.length; i++)
 		{
 			System.out.println(p4.coefficients[i] + " Power: " + p4.exponent[i]);
 		}
@@ -43,7 +43,7 @@ public class Driver {
 
 		Polynomial p5 = new Polynomial(new File("C:/Users/Owner/Downloads/test.txt"));
 
-		for(int i = 0; i < 10; i++)
+		for(int i = 0; i < p5.coefficients.length; i++)
 		{
 			System.out.println(p5.coefficients[i] + " Power: " + p5.exponent[i]);
 		}

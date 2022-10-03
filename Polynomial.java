@@ -31,12 +31,16 @@ class Polynomial{
 		FileReader input = new FileReader(f);
 		BufferedReader reading = new BufferedReader(input);
 		String line = reading.readLine();
-		String [] line2= line.split("[+-]");
+		String [] line2 = line.split("[+-]");
 		int current = 0;
 		String sign = "";
-		if (!line.substring(0, 1).equals("+")|| !line.substring(0, 1).equals("-"))
+		if (!line.substring(0, 1).equals("+") && !line.substring(0, 1).equals("-"))
 		{
 			sign = sign.concat("n");
+		}
+		else
+		{
+			line2 = line.substring(1).split("[+-]");
 		}
 		for (int i = 0; i < line.length(); i++)
 		{
@@ -45,7 +49,6 @@ class Polynomial{
 				sign = sign.concat(line.substring(i, i + 1));
 			}
 		}
-
 		for(String x:line2)
 		{
 			if (x.contains("x"))
@@ -79,7 +82,27 @@ class Polynomial{
 		}
 		input.close();
 		
+		int index = 0;
+		for (int i = 0; i < coefficients.length; i++)
+		{
+			if (coefficients[i] == 0)
+			{
+				index = i;
+				break;
+			}
+		}
 
+		double finalc [] = new double[index];
+		int finale [] = new int[index];
+
+		for (int i = 0; i < index; i++)
+		{
+			finalc[i] = coefficients[i];
+			finale[i] = exponent[i];
+		}
+
+		coefficients = finalc.clone();
+		exponent = finale.clone();
 	}
 
 	
@@ -148,6 +171,18 @@ class Polynomial{
 				index++;
 			}
 		}
+
+		double finalc [] = new double[index];
+		int finale [] = new int[index];
+
+		for (int j = 0; j < finalc.length; j++)
+		{
+			finalc[j] = result.coefficients[j];
+			finale[j] = result.exponent[j];
+		}
+
+		result.coefficients = finalc.clone();
+		result.exponent = finale.clone();
 		return result;
 	}
 
