@@ -255,32 +255,15 @@ class Polynomial{
 	
 	public void saveToFile(String file_name) throws FileNotFoundException
 	{
-		int max = 0;
 		String poly = "";
-		for(int x = 0; x < coefficients.length; x++)
-		{
-			if(coefficients[x] == 0)
-			{
-				max = x;
-				break;
-			}
-		}
 		
-		for(int i = 0; i < max; i++)
+		for(int i = 0; i < coefficients.length; i++)
 		{
 			if(exponent[i] == 0)
 			{
 				if (poly.compareTo("") == 0)
 				{
-					if (coefficients[i] > 0)
-					{
-						poly = poly.concat(Double.toString(coefficients[i]));
-					}
-					else
-					{
-						poly = poly.concat("-" + Double.toString(coefficients[i]));
-					}
-					
+					poly = poly.concat(Double.toString(coefficients[i]));
 				}
 				else
 				{
@@ -290,7 +273,7 @@ class Polynomial{
 					}
 					else
 					{
-						poly = poly.concat("-" +Double.toString(coefficients[i]));
+						poly = poly.concat(Double.toString(coefficients[i]));
 					}
 				}
 			}
@@ -298,15 +281,7 @@ class Polynomial{
 			{
 				if (poly.compareTo("") == 0)
 				{
-					if (coefficients[i] > 0)
-					{
-						poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
-					}
-					else
-					{
-						poly = poly.concat("-" + Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
-					}
-					
+					poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
 				}
 				else
 				{
@@ -316,7 +291,7 @@ class Polynomial{
 					}
 					else
 					{
-						poly = poly.concat("-" + Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+						poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
 					}
 				}
 			}

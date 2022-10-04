@@ -9,7 +9,7 @@ public class Driver {
 		
 		System.out.println(p.evaluate(3)); 
 
-		double [] c1 = {2,4,3};
+		double [] c1 = {2,-4,3};
 		double [] c2 = {1,2,3};
 		int [] e1 = {0,2,3};
 		int [] e2 = {0,1,4};
@@ -48,6 +48,6 @@ public class Driver {
 			System.out.println(p5.coefficients[i] + " Power: " + p5.exponent[i]);
 		}
 		
-		p1.saveToFile("C:/Users/Owner/Downloads/test2.txt");
+		p5.saveToFile("C:/Users/Owner/Downloads/test2.txt");
 	} 
 } 
