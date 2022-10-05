@@ -259,39 +259,42 @@ class Polynomial{
 		
 		for(int i = 0; i < coefficients.length; i++)
 		{
-			if(exponent[i] == 0)
+			if (coefficients[i] != 0)
 			{
-				if (poly.compareTo("") == 0)
+				if(exponent[i] == 0)
 				{
-					poly = poly.concat(Double.toString(coefficients[i]));
-				}
-				else
-				{
-					if (coefficients[i] > 0)
-					{
-						poly = poly.concat("+" +Double.toString(coefficients[i]));
-					}
-					else
+					if (poly.compareTo("") == 0)
 					{
 						poly = poly.concat(Double.toString(coefficients[i]));
 					}
-				}
-			}
-			else
-			{
-				if (poly.compareTo("") == 0)
-				{
-					poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+					else
+					{
+						if (coefficients[i] > 0)
+						{
+							poly = poly.concat("+" +Double.toString(coefficients[i]));
+						}
+						else
+						{
+							poly = poly.concat(Double.toString(coefficients[i]));
+						}
+					}
 				}
 				else
 				{
-					if (coefficients[i] > 0)
+					if (poly.compareTo("") == 0)
 					{
-						poly = poly.concat("+" + Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+						poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
 					}
 					else
 					{
-						poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+						if (coefficients[i] > 0)
+						{
+							poly = poly.concat("+" + Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+						}
+						else
+						{
+							poly = poly.concat(Double.toString(coefficients[i]) + "x" + String.valueOf(exponent[i]));
+						}
 					}
 				}
 			}

@@ -48,6 +48,6 @@ public class Driver {
 			System.out.println(p5.coefficients[i] + " Power: " + p5.exponent[i]);
 		}
 		
-		p5.saveToFile("C:/Users/Owner/Downloads/test2.txt");
+		p1.saveToFile("C:/Users/Owner/Downloads/test2.txt");
 	} 
 } 
